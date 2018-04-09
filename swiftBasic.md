@@ -29,7 +29,7 @@
 - let url = "programmers.co.kr/learn/courses/4/lessons/75#"
 let hasProtocol = url.hasPrefix("http://")
   - http:// 라는 프로토콜을 가지고 있는지에 대해 출력 (T/F)
-- print("\(name)")
+- print("₩\₩(name)")
   - 괄호 안 변수/상수 출력
 
 # Number
@@ -49,11 +49,14 @@ let hasProtocol = url.hasPrefix("http://")
 2번째 줄의 distance를 적당한 타입으로 변경해서 description을 다음과 같이 출력되게 완성해보세요.
 판교에서 파주는 69.5km 거리입니다.
 
-<pre><code>
-let distance = 69500
+<pre><code>let distance = 69500
 let description = "판교에서 파주는 " + String(Double(Double(distance)/Double(1000))) + "km 거리입니다."
 
 print(description)
 </code></pre>
 
 >>판교에서 파주는 69.5km 거리입니다.
+
+
+# Tuple
+- 괄호 () 로 묶어 표현하며, 콤마 , 로 구분 한 값의 리스트
