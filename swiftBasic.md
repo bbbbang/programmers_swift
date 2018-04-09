@@ -26,21 +26,21 @@
   - 문자열 하나하나에 독립적으로 접근 가능한 array와 비슷한 'String.CharacterView' object가 나온다.
 - let count = characters.count
   - characters의 길이 5 가 출력된다.
-- let url = "programmers.co.kr/learn/courses/4/lessons/75#"
+- let url = "programmers.co.kr/learn/courses/4/lessons/75#"  
 let hasProtocol = url.hasPrefix("http://")
   - http:// 라는 프로토콜을 가지고 있는지에 대해 출력 (T/F)
 - print("₩\₩(name)")
   - 괄호 안 변수/상수 출력
 
 # Number
-- var currentSpeed:Int = 110
+- var currentSpeed:Int = 110  
   var currentSpeed += Int(20.5)
   - int type에 float/double 형 변수 연산을 하고 싶을 때
 - UInt : 부호를 갖고있지 않은 정수
   - min : 0
   - max : Int.max 의 두배
-- let pi = 3.14 (기본적으로 double값으로 저장 된다.)
-  let divider = 2 (당연히 정수형으로 저장)
+- let pi = 3.14 (기본적으로 double값으로 저장 된다.)  
+  let divider = 2 (당연히 정수형으로 저장)  
   let halfPi-pi/Double(divider)
     - divider를 double형으로 변환하여 연산하지 않으면, 오류가 발생한다.
 
@@ -60,3 +60,31 @@ print(description)
 
 # Tuple
 - 괄호 () 로 묶어 표현하며, 콤마 , 로 구분 한 값의 리스트
+- let time1 = (9,0,48)  
+  let time2:(h:Int, m:Int, s:Int) = (11, 51, 5)
+ - time1.0 -> 0번째 값 9 출력
+- time2.h , time2.m -> 숫자 index보다 사용 편리
+- let duration = (time1, time2)  
+  let (start, end) = duration  
+  let endHour = end.h
+
+# typealias
+- 직접 type을 지정하여 사용하는 방법
+- typealias Time = (h:Int, m:Int, s:Int)  
+  typealias Duration = (start:Time, end:Time)  
+  let today:Duration = ((910,23)(17,8,32)  
+  print("We studied until ₩\₩(today.end.h) today")
+
+#### practice
+> 트라이애슬론은 수영, 사이클, 달리기가 합쳐진 운동으로, 우리에게 철인 3종 경기라는 이름으로 잘 알려져 있습니다. 트라이애슬론에는 단거리 경주인 sprint와 장거리 경기인 ironMan 경기가 있습니다.
+ironMan경기의 사이클 거리가 sprint경기의 사이클 거리의 몇배인지를 times에 저장하고 싶습니다. 코드 5번째 줄의 _____를 수정해서 times에 값을 저장하세요.
+
+<code><pre> typealias Triathlon = (swim:Int, cycle:Int, running:Int)
+let sprint = Triathlon(750, 20000, 5000)
+let ironMan = Triathlon(3800, 180000, 42200)
+
+let times = ironMan.cycle/sprint.cycle
+
+print(times)</pre></code>
+
+>>9
