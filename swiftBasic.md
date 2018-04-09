@@ -161,14 +161,14 @@ print(intersectHeros)
 >> ["프린스", "고블린 통"]
 
 # Control Flow
-- if문
-<pre><code>if condition {}
-  else {}<code><pre>
-- for문
-<pre><code> for i=0;i<count;i++ {}
-  for item in collection{}<code><pre>
-- switch문
-<pre><code>switch value { case 1: case 2: default: }<code><pre>
+- if문  
+  if condition {}  
+  else {}  
+- for문  
+  for i=0;i<count;i++ {}  
+  for item in collection{}
+- switch문  
+switch value { case 1: case 2: default: }
   - case 5...10 //5에서 10 사이의 수
 
 #### practice
