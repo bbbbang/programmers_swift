@@ -60,20 +60,22 @@ print(description)
 
 # Tuple
 - 괄호 () 로 묶어 표현하며, 콤마 , 로 구분 한 값의 리스트
-- let time1 = (9,0,48)  
+#### example
+<pre><code> let time1 = (9,0,48)  
   let time2:(h:Int, m:Int, s:Int) = (11, 51, 5)
- - time1.0 -> 0번째 값 9 출력
-- time2.h , time2.m -> 숫자 index보다 사용 편리
-- let duration = (time1, time2)  
+  time1.0 // 0번째 값 9 출력
+  time2.h , time2.m // 숫자 index보다 사용 편리
+  let duration = (time1, time2)  
   let (start, end) = duration  
-  let endHour = end.h
+  let endHour = end.h</code></pre>
 
 # typealias
 - 직접 type을 지정하여 사용하는 방법
-- typealias Time = (h:Int, m:Int, s:Int)  
+#### example
+  <pre><code>typealias Time = (h:Int, m:Int, s:Int)  
   typealias Duration = (start:Time, end:Time)  
   let today:Duration = ((910,23)(17,8,32)  
-  print("We studied until ₩\₩(today.end.h) today")
+  print("We studied until ₩\₩(today.end.h) today")</code><pre>
 
 #### practice
 > 트라이애슬론은 수영, 사이클, 달리기가 합쳐진 운동으로, 우리에게 철인 3종 경기라는 이름으로 잘 알려져 있습니다. 트라이애슬론에는 단거리 경주인 sprint와 장거리 경기인 ironMan 경기가 있습니다.
@@ -88,3 +90,72 @@ let times = ironMan.cycle/sprint.cycle
 print(times)</pre></code>
 
 >>9
+
+
+# Array
+- 순서를 가지고 있는 값의 배열
+- 선언 및 값 추가
+  - var meetingRooms:Array<String> = ["Kahlo","Picasso","Matisse"]  
+  var groups:[Int] = [5,10,15]  
+- 값 추가
+  - var newRoom:String = "Renoir"  
+    let newCapacity = 0.5
+  - meetingRooms += [newRoom]
+  speedHistory.append(Int(newCapacity))  ... 형을 변경시켜서 추가(append 해준다.
+- 접근
+  - speedHistory[0] = speedHistory.first
+
+# Dictionary
+- 값에 이름표를 붙여 저장하는 상자
+- 두 개 이상의 변수를 한번에 저장하려 할 때 사용(Array 예제의 meetingRooms와 groups를 한번에 저장하고 싶을 때 사용.)  
+- 정의  
+  var roomCapacity:[String:int] = ["Kahlo":5, "Picasso":10, "Matisse":15]  
+- 값 추가  
+  roomCapacity["Renoir"]=0
+- 특정 값들만 가져오고 싶을 때  
+  let roomNames = roomCapacity.keys  
+  let capacities = roomCapacity.values  
+
+# Set
+- 순서를 가지고 있지 않기 때문에 집합연산을 하기 쉽다. (intersect, subtract, union, exclusiveOR)
+#### example
+<code><pre>let num:Set = [1,2,3,4,5,6,7,8,9,10]
+let even:Set = [2,4,6,8,10]
+
+let same = num.intersect(even)
+let dif = num.subtract(even)
+let union = num.union(even)
+let exOR = num.exclusiveOr(even) (합집합-교집합)
+</pre></code>
+
+#### practice
+>영웅들로 구성된 파티를 만들어, 상대방의 파티와 싸우는 게임을 만드려고 합니다. 기존 파티 heroes에 새로운 영웅 newHero를 파티의 맨 앞에 영입하는 완성하세요.
+heroes에 새로운 항목을 추가할 수 있도록 만든 뒤, newHero를 맨 앞에 추가하면 됩니다.
+newHero를 맨 앞에 추가하려면, insert를 참고하세요.
+
+<pre><code>
+var heroes = ["프린스", "마녀", "해골 군대", "고블린 통"]
+var newHero = "흑룡"
+
+heroes.insert(newHero, atIndex: 0)
+
+print(heroes)
+</code></pre>
+
+>>["흑룡", "프린스", "마녀", "해골 군대", "고블린 통"]
+
+>상대방의 영웅 파티가 나타났습니다. 상대방과 겨룰 때에는 서로 겹치는 영웅들끼리만 대전을 할 수 있습니다.
+내가 가진 영웅 heros과 상대의 영웅 oppHeros끼리 겹치는 영웅으로 이루어진 Set인 intersectHeros를 구하세요.
+(Swift 최신 버전에서 intersect가 intersection으로 이름이 변경되었습니다.)
+
+<pre><code>
+let heros:Set = ["프린스", "마녀", "해골 군대", "고블린 통"]
+let oppHeros:Set = ["자이언트 해골", "고블린 통", "대형석궁", "프린스"]
+
+// 상대와 겹치는 영웅들로 이뤄진 set을 완성하세요
+let intersectHeros = heros.intersect(oppHeros)
+
+print(intersectHeros)
+</code></pre>
+
+>> ["프린스", "고블린 통"]
