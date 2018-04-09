@@ -60,7 +60,7 @@ print(description)
 
 # Tuple
 - 괄호 () 로 묶어 표현하며, 콤마 , 로 구분 한 값의 리스트
-#### example
+
 <pre><code> let time1 = (9,0,48)  
   let time2:(h:Int, m:Int, s:Int) = (11, 51, 5)
   time1.0 // 0번째 값 9 출력
@@ -71,7 +71,7 @@ print(description)
 
 # typealias
 - 직접 type을 지정하여 사용하는 방법
-#### example
+
   <pre><code>typealias Time = (h:Int, m:Int, s:Int)  
   typealias Duration = (start:Time, end:Time)  
   let today:Duration = ((910,23)(17,8,32)  
@@ -118,7 +118,7 @@ print(times)</pre></code>
 
 # Set
 - 순서를 가지고 있지 않기 때문에 집합연산을 하기 쉽다. (intersect, subtract, union, exclusiveOR)
-#### example
+
 <code><pre>let num:Set = [1,2,3,4,5,6,7,8,9,10]
 let even:Set = [2,4,6,8,10]
 
