@@ -193,3 +193,60 @@ default: //나머지(맥주 4병 이상 50병 이하)
     print("Make wait in line")
 }</code></pre>
 >>Guide to small item counter
+
+# Optional
+- 실행 중에 nil이 될 수 있는 변수를 ? 로 관리하는 것
+- nil : 값이 없는 상태
+- 선언  
+  var title : String = "Story"
+  var ratings : [int]? = nil
+  var subURL : String? = nil
+  - nil인 값을 출력하려하면 에러가 난다.
+- Optional변수 사용법
+1. Force Unwrapping : !     -- 지양
+  - 값의 존재를 확신할 때 사용
+  - 출력시 optional() 이 없어진다.
+2. Optional binding : if let, if var
+  - optional이 아닌 새로운 상수와 변수 생성
+  - if ratings != nill {}  
+    if let theRatings = ratings {}
+      - 값이 있는 경우에만 if만 작성
+3. Implicitly Unwrapped Optional : 선언시 ! 사용
+  - 구조적으로 초기화 이후 항상 값이 존재하는 경우를 위함
+  - Optional이 아닌 척 함
+
+#### practice
+>아래는 애플와치와 쌍을 이룬 아이폰을 찾는 가상의 코드입니다.(실제 애플와치 앱에서 이런 코드를 사용하는 것은 아닙니다)
+optional binding을 써서 빈 칸에 적당한 코드를 작성해주세요.
+
+<pre><code>struct WatchDevice {
+    var pairediPhone:String? //애플와치와 쌍을 이루는 아이폰의 이름.
+    var appInstalled = false //어플리케이션의 설치 유무
+
+    enum WatchSize {
+        case m42, m38
+    }
+}
+
+var appleWatch:WatchDevice? = nil
+appleWatch = WatchDevice(pairediPhone: "링고스타의 아이폰", appInstalled: true)
+
+// ①appleWatch에 대해 optional binding으로 watch라는 새로운 변수를 생성해주세요.
+if var watch = appleWatch {
+    // ②watch와 쌍을 이루는 아이폰의 이름에 대해
+    // optional binding으로 phoneName이라는 새로운 변수를 생성해 주세요.
+    if let phoneName = watch.pairediPhone {
+        print ("AppleWatch가 \(phoneName)과 쌍을 이룹니다.")
+    }
+}
+</code></pre>
+>>AppleWatch가 링고스타의 아이폰과 쌍을 이룹니다.
+
+>실습1에서 쓴 코드를 더 줄여 써 봅시다. 실습1과 동일한 결과가 나오도록 밑줄 친 구문을 완성해주세요.
+실행 시 AppleWatch가 링고스타의 아이폰과 쌍을 이룹니다.라는 구문이 나오면 됩니다.
+
+<pre><code>
+
+???
+
+</code></pre>
